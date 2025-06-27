@@ -1,6 +1,6 @@
 # 🌐 Control de Expediente Clínico Universal (MyCECU)
 
-MyCECU consiste en un sitio web para gestionar expedientes clínicos digitales con el motivo de facilitar su acceso y accesibilidad.
+MyCECU consiste en un sitio web para gestionar expedientes clínicos digitales con el motivo de facilitar su acceso y accesibilidad
 
 ## Desarrolladores
 
