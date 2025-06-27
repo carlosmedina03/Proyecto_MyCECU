@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fuentes/montserrat.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #F2F4F7;
+    font-family: 'Montserrat';
+}
+
+.caja-logo{
+    display: block;
+    width: max-content;
+    margin: 75px auto 20px auto;
+}
+
+.caja-logo img{
+    display: block;
+    height: 50px;
+    width: auto;
+}
+
+.caja-login{
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: clamp(300px, 80vw, 500px);
+    margin: 0 auto;
+}
+
+.caja-login h1{
+    font-size: 40;
+    font-weight: bold;
+    padding: 35px;
+}
+
+.caja-login form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px
+}
+
+.caja-login input[type="email"],
+.caja-login input[type="password"]{
+    padding: 10px;
+    margin: 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.caja-login input[type="email"]:focus,
+.caja-login input[type="password"]:focus{
+    outline: 2px solid #379673;
+}
+
+.caja-login button[type="submit"]{
+    height: 50px;
+    width: 200px;
+    margin: 20px auto 40px auto; 
+    background-color: #379673;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    transition: opacity 0.3s ease;
+}
+
+.caja-login button:hover {
+    opacity: 0.90;
+}
+
+.caja-registro{
+    text-align: center;
+    padding-top: 5px;
+}
+
+.caja-registro p{
+    font-weight: 250;
+}
+
+.caja-registro p > a{
+    color: #379673;
+    font-weight: 500;
+}
