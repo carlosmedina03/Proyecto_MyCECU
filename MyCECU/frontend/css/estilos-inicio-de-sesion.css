@@ -61,6 +61,18 @@ body{
     outline: 2px solid #379673;
 }
 
+.caja-login input[type="email"] {
+    background: url('../assets/icono-correo.svg') no-repeat 12px center;
+    background-size: 25px;
+    padding-left: 50px;
+}
+
+.caja-login input[type="password"] {
+    background: url('../assets/icono-candado.svg') no-repeat 16px center;
+    background-size: 20px;
+    padding-left: 50px;
+}
+
 .caja-login button[type="submit"]{
     height: 50px;
     width: 200px;

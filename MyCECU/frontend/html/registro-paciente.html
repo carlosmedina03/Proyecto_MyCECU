@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro del paciente</title>
+    <link rel="stylesheet" href="../css/estilos-globales.css" type="text/css">
+    <link rel="stylesheet" href="../css/estilos-registro.css" type="text/css">
+</head>
+<body>
+    <h1>Registro de doctor</h1>
+    <form id="form-registro-doctor" name="form-registro-doctor">
+        <div class="caja-registro">
+            <h2>Información general</h2>
+            <label for="nombre"><span>*</span> Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="apellido-paterno"><span>*</span> Apellido paterno:</label>
+            <input type="text" id="apellido-paterno" name="apellido-paterno" required>
+            <label for="apellido-materno"><span>*</span> Apellido materno:</label>
+            <input type="text" id="apellido-materno" name="apellido-materno" required>
+            <label><span>*</span> Género:</label>
+            <label for="genero-masculino">
+                <input type="radio" id="genero-masculino" name="genero" value="masculino" required> Masculino
+            </label>
+            <label for="genero-femenino">
+                <input type="radio" id="genero-femenino" name="genero" value="femenino" required> Femenino
+            </label>
+            <label for="fecha-nacimiento"><span>*</span> Fecha de nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+            <label for="curp"><span>*</span> Clave Única de Registro de Población:</label>
+            <input type="text" id="curp" name="curp" required>
+            <label for="correo"><span>*</span> Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+            <label for="telefono"><span>*</span> Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <label for="contrasena"><span>*</span> Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+            <label for="domicilio"><span>*</span> Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" required>
+            <label for="estado"><span>*</span> Estado</label>
+            <select id="estado" name="estado" required>
+                <option value="" disabled selected hidden>-- Selecciona un estado --</option>
+            </select>
+            <label for="ciudad"><span>*</span> Ciudad</label>
+            <select id="ciudad" name="ciudad" required>
+                <option value="" disabled selected hidden>-- Selecciona una ciudad --</option>
+            </select>
+        </div>
+        <div class="caja-registro">
+            <h2>Información medica</h2>
+            <label><span>*</span> ¿Padeces alguna discapacidad o enfermedad crónica?</label>
+            <label for="enfermedad-cronica-si">
+                <input type="radio" id="enfermedad-cronica-si" name="enfermedad-cronica" value="si" required> Si
+            </label>
+            <label for="enfermedad-cronica-no">
+                <input type="radio" id="enfermedad-cronica-no" name="enfermedad-cronica" value="no" required> No
+            </label>
+            <label for="detalles-enfermedad">Si tu respuesta es sí, indique cual o cuales padece:</label>
+            <input type="text" id="detalles-enfermedad" name="detalles-enfermedad" required>
+
+            <label><span>*</span> ¿Presentas alergía de algun tipo?</label>
+            <label for="alergia-si">
+                <input type="radio" id="alergia-si" name="alergia" value="si" required> Si
+            </label>
+            <label for="alergia-no">
+                <input type="radio" id="alergia-no" name="alergia" value="no" required> No
+            </label>
+            <label for="detalles-alergia">Si tu respuesta es sí, indique cual o cuales presenta:</label>
+            <input type="text" id="detalles-alergia" name="detalles-alergia" required>
+            <label for="grupo-sanguineo"><span>*</span> Grupo sanguíneo:</label>
+            <select id="grupo-sanguineo" name="grupo-sanguineo" required>
+                <option value="" disabled selected hidden>-- Selecciona tu grupo --</option>
+                <option value="a+">A+</option>
+                <option value="a-">A-</option>
+                <option value="b+">B+</option>
+                <option value="b-">B-</option>
+                <option value="ab+">AB+</option>
+                <option value="ab-">AB-</option>
+                <option value="o+">O+</option>
+                <option value="o-">O-</option>
+            </select>
+            <label for="telefono-emergencia"><span>*</span> Teléfono de emergencia:</label>
+            <input type="tel" id="telefono-emergencia" name="telefono-emergencia" required>
+            <label for="peso"><span>*</span> Peso (kg):</label>
+            <input
+            type="number"
+            id="peso"
+            name="peso"
+            min="0"
+            max="500"
+            step="0.01"
+            pattern="^(?:[0-4]?[0-9]{1,2}|500)(?:\\.\\d{1,2})?$"
+            inputmode="decimal"
+            required>
+            <label for="estatura"><span>*</span> Estatura (m):</label>
+            <input
+            type="number"
+            id="estatura"
+            name="estatura"
+            min="0"
+            max="2.5"
+            step="0.01"
+            pattern="^(?:[0-1](?:\\.\\d{1,2})?|2(?:\\.[0-4]\\d?|\\.5)?)$"
+            inputmode="decimal"
+            required>
+        </div>
+        <button type="submit" id="btn-registrarse" name="btn-registrarse">REGISTRARSE</button>
+    </form>
+    <script src="../js/opcionEstados.js"></script>
+    <script src="../js/validacionDiscapacidad.js"></script>
+    <script src="../js/smoothScroll.js"></script>
+</body>
+</html>
