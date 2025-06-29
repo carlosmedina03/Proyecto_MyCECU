@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de pacientes</title>
+    <link rel="stylesheet" href="../css/estilos-globales.css">
+    <link rel="stylesheet" href="../css/estilos-buscador.css">
+</head>
+<body>
+    <header>
+        <nav class="navegacion">
+            <div class="logo">
+                <img src="../assets/logo-mycecu.svg">
+            </div>
+            <ul class="menu">
+                <li><a href="">INICIO</a></li>
+                <li><a href="">BUSCADOR DE PACIENTES</a></li>
+                <li><a href="">EXPEDIENTE CLÍNICO</a></li>
+            </ul>
+            <div class="acciones">
+                <a href="iniciar-sesion.html">INICIAR SESIÓN</a>
+                <a href="registro-doctor.html" class="btn-registro">REGISTRARSE</a>
+            </div>
+        </nav>
+    </header>
+    <h1>Buscador de Pacientes MyCECU</h1>
+    <section class="buscador">
+        <select id="criterio" name="criterio">
+            <option value="nombre">Buscar por nombre</option>
+            <option value="fecha">Buscar por fecha de nacimiento</option>
+        </select>
+        <input type="search" id="busqueda" name="busqueda" placeholder="Escriba aquí su búsqueda">
+    </section>
+    <h2>Resultado de la busqueda</h2>
+    <section class="resultado">
+        <!-- el JS inyecta aquí las tarjetas -->
+    </section>
+    <script src="../js/selectorBuscador.js"></script>
+    <script src="../js/smoothScroll.js"></script>
+</body>
+</html>
