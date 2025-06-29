@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fuentes/montserrat.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+body{
+    box-sizing: border-box;
+    background-color: #F2F4F7;
+}
+
+h1{
+    display: block;
+    width: max-content;
+    margin: 50px auto 20px auto;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+form{
+    width: clamp(300px, 80vw, 750px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.caja-registro{
+    background:#FFFFFF;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+    display:flex;
+    flex-direction:column;
+    gap:30px;  
+    padding: 30px;
+    padding-top: 0;
+}
+
+span{
+    color: #FF6161;
+}
+
+.caja-registro input[type="email"],
+.caja-registro input[type="password"],
+.caja-registro input[type="date"],
+.caja-registro input[type="tel"],
+.caja-registro input[type="text"],
+.caja-registro input[type="number"],
+.caja-registro select{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.caja-registro input[type="email"]:focus,
+.caja-registro input[type="password"]:focus,
+.caja-registro input[type="date"]:focus,
+.caja-registro input[type="tel"]:focus,
+.caja-registro input[type="text"]:focus,
+.caja-registro input[type="number"]:focus,
+.caja-registro select:focus{
+    outline: 2px solid #379673;
+}
+
+form button[type="submit"]{
+    align-self: flex-end;
+    padding: 20px 35px;
+    background-color: #379673;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    transition: opacity 0.3s ease;
+}
+
+form button[type="submit"]:hover{
+    opacity: 0.90;
+}
