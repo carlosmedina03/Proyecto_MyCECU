@@ -32,7 +32,7 @@
             <label for="correo"><span>*</span> Correo electrónico:</label>
             <input type="email" id="correo" name="correo" required>
             <label for="telefono"><span>*</span> Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]*" required>
             <label for="contrasena"><span>*</span> Contraseña:</label>
             <input type="password" id="contrasena" name="contrasena" required>
             <label for="domicilio"><span>*</span> Domicilio:</label>
@@ -80,29 +80,11 @@
                 <option value="o-">O-</option>
             </select>
             <label for="telefono-emergencia"><span>*</span> Teléfono de emergencia:</label>
-            <input type="tel" id="telefono-emergencia" name="telefono-emergencia" required>
+            <input type="tel" id="telefono-emergencia" name="telefono-emergencia" pattern="[0-9]*" required>
             <label for="peso"><span>*</span> Peso (kg):</label>
-            <input
-            type="number"
-            id="peso"
-            name="peso"
-            min="0"
-            max="500"
-            step="0.01"
-            pattern="^(?:[0-4]?[0-9]{1,2}|500)(?:\\.\\d{1,2})?$"
-            inputmode="decimal"
-            required>
+            <input type="number" id="peso" name="peso" min="0" max="500" step="0.01" pattern="^(?:[0-4]?[0-9]{1,2}|500)(?:\\.\\d{1,2})?$" required>
             <label for="estatura"><span>*</span> Estatura (m):</label>
-            <input
-            type="number"
-            id="estatura"
-            name="estatura"
-            min="0"
-            max="2.5"
-            step="0.01"
-            pattern="^(?:[0-1](?:\\.\\d{1,2})?|2(?:\\.[0-4]\\d?|\\.5)?)$"
-            inputmode="decimal"
-            required>
+            <input type="number" id="estatura" name="estatura" min="0" max="2.5" step="0.01" pattern="^(?:[0-1](?:\\.\\d{1,2})?|2(?:\\.[0-4]\\d?|\\.5)?)$" required>
         </div>
         <button type="submit" id="btn-registrarse" name="btn-registrarse">REGISTRARSE</button>
     </form>
