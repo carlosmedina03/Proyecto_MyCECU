@@ -1,14 +1,62 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta clínica</title>
-    <link rel="stylesheet" href="../css/estilos-globales.css">
-    <link rel="stylesheet" href="../css/estilos-consulta.css">
+    <title>Creación de receta médica</title>
+    <link rel="stylesheet" href="../css/estilos-globales.css" type="text/css">
+    <link rel="stylesheet" href="../css/estilos-consulta.css" type="text/css">
 </head>
 <body>
-    CONSULTA CLÍNICA
+    <h1>Consulta clínica</h1>
+    <form id="form-receta" name="form-receta">
+        <div class="caja-registro">
+            <div class="cabecera">
+                <h2>Creación de la receta médica</h2>
+            </div>
+            <span class="consulta-numero">No. consulta: #########</span>
+            <label><span>*</span> Nombre del doctor:</label>
+            <input type="text" id="nombre-doctor" name="nombre-doctor" readonly>
+            <label><span>*</span> Apellido paterno:</label>
+            <input type="text" id="apellido-paterno-doctor" name="apellido-paterno-doctor" readonly>
+            <label><span>*</span> Apellido materno:</label>
+            <input type="text" id="apellido-materno-doctor" name="apellido-materno-doctor" readonly>
+            <label><span>*</span> Especialidad médica:</label>
+            <input type="text" id="especialidad-medica" name="especialidad-medica" readonly>
+            <label><span>*</span> Cédula profesional:</label>
+            <input type="text" id="cedula-profesional" name="cedula-profesional" readonly>
+            <label><span>*</span> Correo electrónico:</label>
+            <input type="email" id="correo-doctor" name="correo-doctor" readonly>
+            <label><span>*</span> Teléfono de contacto:</label>
+            <input type="tel" id="telefono-doctor" name="telefono-doctor" readonly>
+            <label><span>*</span> Nombre del paciente:</label>
+            <input type="text" id="nombre-paciente" name="nombre-paciente" readonly>
+            <label><span>*</span> Apellido paterno:</label>
+            <input type="text" id="apellido-paterno-paciente" name="apellido-paterno-paciente" readonly>
+            <label><span>*</span> Apellido materno:</label>
+            <input type="text" id="apellido-materno-paciente" name="apellido-materno-paciente" readonly>
+            <label><span>*</span> Edad del paciente:</label>
+            <input type="number" id="edad-paciente" name="edad-paciente" readonly>
+            <label><span>*</span> Municipio de emisión:</label>
+            <input type="text" id="municipio-emision" name="municipio-emision" readonly>
+            <label><span>*</span> Estado de emisión:</label>
+            <input type="text" id="estado-emision" name="estado-emision" readonly>
+            <label><span>*</span> Fecha de la consulta:</label>
+            <input type="date" id="fecha-consulta" name="fecha-consulta" required>
+            <label><span>*</span> Hora de la consulta:</label>
+            <input type="time" id="hora-consulta" name="hora-consulta" required>
+            <label for="diagnostico"><span>*</span> Diagnóstico clínico:</label>
+            <textarea id="diagnostico" name="diagnostico" rows="5" required></textarea>
+            <label for="medicamento"><span>*</span> Medicamento recetado y forma de uso:</label>
+            <textarea id="medicamento" name="medicamento" rows="5" required></textarea>
+            <label for="info-adicional">Información adicional:</label>
+            <textarea id="info-adicional" name="info-adicional" rows="5"></textarea>
+        </div>
+        <button type="button" id="btn-generar-pdf" onclick="generarPDF()">CREAR RECETA MÉDICA</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="../js/autocompletarReceta.js"></script>
+    <script src="../js/generarReceta.js"></script>
 </body>
 </html>

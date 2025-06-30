@@ -1,0 +1,89 @@
+body {
+    background-color: #F2F4F7;
+}
+
+h1 {
+    display: block;
+    margin: 50px auto 20px auto;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+form {
+    width: clamp(300px, 80vw, 750px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.caja-registro {
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecera h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.consulta-numero {
+    font-size: 14px;
+    color: #666;
+}
+
+label {
+    font-weight: 500;
+}
+
+span {
+    color: #FF6161;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    resize: vertical;
+}
+
+input[readonly] {
+    background-color: #e0e0e0;
+    color: #555;
+    cursor: not-allowed;
+}
+
+input:focus:not([readonly]),
+textarea:focus {
+    outline: 2px solid #379673;
+}
+
+button[type="button"] {
+    align-self: flex-end;
+    padding: 15px 30px;
+    background-color: #379673;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    transition: opacity 0.3s ease;
+    margin-bottom: 30px;
+}
+
+button[type="button"]:hover {
+    opacity: 0.90;
+}

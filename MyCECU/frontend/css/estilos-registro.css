@@ -38,25 +38,13 @@ span{
     color: #FF6161;
 }
 
-.caja-registro input[type="email"],
-.caja-registro input[type="password"],
-.caja-registro input[type="date"],
-.caja-registro input[type="tel"],
-.caja-registro input[type="text"],
-.caja-registro input[type="number"],
-.caja-registro select{
+input, select{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.caja-registro input[type="email"]:focus,
-.caja-registro input[type="password"]:focus,
-.caja-registro input[type="date"]:focus,
-.caja-registro input[type="tel"]:focus,
-.caja-registro input[type="text"]:focus,
-.caja-registro input[type="number"]:focus,
-.caja-registro select:focus{
+input:focus, select:focus{
     outline: 2px solid #379673;
 }
 
