@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro del doctor</title>
+    <link rel="stylesheet" href="../css/estilos-globales.css" type="text/css">
+    <link rel="stylesheet" href="../css/estilos-registro.css" type="text/css">
+</head>
+<body>
+    <h1>Registro de doctor</h1>
+    <form id="form-registro-doctor" name="form-registro-doctor" action="../../backend/database/registro.php" method="post">
+        <div class="caja-registro">
+            <h2>Información general</h2>
+            <label for="nombre"><span>*</span> Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="apellido-paterno"><span>*</span> Apellido paterno:</label>
+            <input type="text" id="paterno" name="paterno" required>
+            <label for="apellido-materno"><span>*</span> Apellido materno:</label>
+            <input type="text" id="materno" name="materno" required>
+            <label><span>*</span> Género:</label>
+            <label for="genero-masculino">
+                <input type="radio" id="masculino" name="genero" value="masculino" required> Masculino
+            </label>
+            <label for="genero-femenino">
+                <input type="radio" id="femenino" name="genero" value="femenino" required> Femenino
+            </label>
+            <label for="fecha-nacimiento"><span>*</span> Fecha de nacimiento:</label>
+            <input type="date" id="nacimiento" name="nacimiento" required>
+            <label for="curp"><span>*</span> Clave Única de Registro de Población:</label>
+            <input type="text" id="curp" name="curp" required>
+            <label for="correo"><span>*</span> Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+            <label for="telefono"><span>*</span> Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]*" required>
+            <label for="contrasena"><span>*</span> Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+            <label for="domicilio"><span>*</span> Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" required>
+            <label for="estado"><span>*</span> Estado</label>
+            <select id="estado" name="estado" required>
+                <option value="" disabled selected hidden>-- Selecciona un estado --</option>
+            </select>
+            <label for="ciudad"><span>*</span> Ciudad</label>
+            <select id="ciudad" name="ciudad" required>
+                <option value="" disabled selected hidden>-- Selecciona una ciudad --</option>
+            </select>
+        </div>
+        <div class="caja-registro">
+            <h2>Información profesional</h2>
+            <label for="nivel-estudios"><span>*</span> Nivel de estudios:</label>
+            <select id="nivestudios" name="nivestudios" required>
+                <option value="" disabled selected hidden>-- Selecciona tu nivel --</option>
+                <option value="licenciatura">Licenciatura</option>
+                <option value="maestria">Maestría</option>
+                <option value="doctorado">Doctorado</option>
+            </select>
+            <label for="institucion"><span>*</span> Institución de egreso:</label>
+            <input type="text" id="institucion" name="institucion" required>
+            <label for="especialidad"><span>*</span> Especialidad médica:</label>
+            <input type="text" id="especialidad" name="especialidad" required>
+            <label for="cedula"><span>*</span> Cédula profesional:</label>
+            <input type="text" id="cedula" name="cedula" required>
+        </div>
+        <button type="submit" id="btn-registrarse" name="btn-registrarse">REGISTRARSE</button>
+    </form>
+    <script src="../js/opcionEstados.js"></script>
+    <script src="../js/smoothScroll.js"></script>
+</body>
+</html>
