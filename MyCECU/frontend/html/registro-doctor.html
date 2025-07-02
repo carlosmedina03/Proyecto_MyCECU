@@ -9,24 +9,24 @@
 </head>
 <body>
     <h1>Registro de doctor</h1>
-    <form id="form-registro-doctor" name="form-registro-doctor">
+    <form id="form-registro-doctor" name="form-registro-doctor" action="../../backend/database/registro.php" method="post">
         <div class="caja-registro">
             <h2>Información general</h2>
             <label for="nombre"><span>*</span> Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
             <label for="apellido-paterno"><span>*</span> Apellido paterno:</label>
-            <input type="text" id="apellido-paterno" name="apellido-paterno" required>
+            <input type="text" id="paterno" name="paterno" required>
             <label for="apellido-materno"><span>*</span> Apellido materno:</label>
-            <input type="text" id="apellido-materno" name="apellido-materno" required>
+            <input type="text" id="materno" name="materno" required>
             <label><span>*</span> Género:</label>
             <label for="genero-masculino">
-                <input type="radio" id="genero-masculino" name="genero" value="masculino" required> Masculino
+                <input type="radio" id="masculino" name="genero" value="masculino" required> Masculino
             </label>
             <label for="genero-femenino">
-                <input type="radio" id="genero-femenino" name="genero" value="femenino" required> Femenino
+                <input type="radio" id="femenino" name="genero" value="femenino" required> Femenino
             </label>
             <label for="fecha-nacimiento"><span>*</span> Fecha de nacimiento:</label>
-            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+            <input type="date" id="nacimiento" name="nacimiento" required>
             <label for="curp"><span>*</span> Clave Única de Registro de Población:</label>
             <input type="text" id="curp" name="curp" required>
             <label for="correo"><span>*</span> Correo electrónico:</label>
@@ -49,7 +49,7 @@
         <div class="caja-registro">
             <h2>Información profesional</h2>
             <label for="nivel-estudios"><span>*</span> Nivel de estudios:</label>
-            <select id="nivel-estudios" name="nivel-estudios" required>
+            <select id="nivestudios" name="nivestudios" required>
                 <option value="" disabled selected hidden>-- Selecciona tu nivel --</option>
                 <option value="licenciatura">Licenciatura</option>
                 <option value="maestria">Maestría</option>
