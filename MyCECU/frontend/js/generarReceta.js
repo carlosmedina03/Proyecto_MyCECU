@@ -5,7 +5,7 @@ function generarPDF() {
         return;
     }
 
-    const numeroConsulta = form.dataset.numeroConsulta || "#########";
+    const numeroConsulta = form.dataset.numeroConsulta || "#############";
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
