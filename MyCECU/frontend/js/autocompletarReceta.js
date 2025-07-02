@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     // Insertar número de consulta dinámico
-    const numeroConsulta = `CONS-${Date.now().toString().slice(-12)}`;
+    const numeroConsulta = `${Date.now().toString().slice(-12)}`;
     document.querySelector(".consulta-numero").textContent = `No. consulta: ${numeroConsulta}`;
     document.getElementById("form-receta").dataset.numeroConsulta = numeroConsulta;
     // Insertar datos en los campos readonly
