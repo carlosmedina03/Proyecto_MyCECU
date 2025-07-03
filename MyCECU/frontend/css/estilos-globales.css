@@ -31,6 +31,11 @@ body {
 
 .navegacion{
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   flex-wrap: wrap;
   align-items: center;
   padding: 20px;
@@ -52,7 +57,7 @@ body {
 }
 
 ul > li > a{
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-decoration: none;
   color: #000000;
 }
