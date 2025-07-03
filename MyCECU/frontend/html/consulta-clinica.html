@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="../css/estilos-consulta.css" type="text/css">
 </head>
 <body>
+    <header>
+        <nav class="navegacion">
+            <div class="logo">
+                <img src="../assets/logo-mycecu.svg">
+            </div>
+            <ul class="menu">
+                <li><a href="../html/index.html">INICIO</a></li>
+                <li><a href="../html/buscador-pacientes.html">BUSCADOR DE PACIENTES</a></li>
+                <li><a href="../html/expediente-clinico.html">EXPEDIENTE CLÍNICO</a></li>
+            </ul>
+            <div class="acciones">
+                <a href="iniciar-sesion.html">INICIAR SESIÓN</a>
+                <a href="registro-doctor.html" class="btn-registro">REGISTRARSE</a>
+            </div>
+        </nav>
+    </header>
     <h1>Consulta clínica</h1>
     <form id="form-receta" name="form-receta">
         <div class="caja-registro">
@@ -55,8 +71,8 @@
         <button type="button" id="btn-generar-pdf" onclick="generarPDF()">CREAR RECETA MÉDICA</button>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script-->
     <script src="../js/autocompletarReceta.js"></script>
     <script src="../js/generarReceta.js"></script>
+    <script src="../js/menuNavegacion.js"></script>
 </body>
 </html>
