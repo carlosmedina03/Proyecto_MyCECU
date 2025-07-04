@@ -60,7 +60,7 @@ busqueda.addEventListener('keydown', e => {
         </div>
         <div class="botones">
         <button onclick="window.location.href='consulta-clinica.html'">REALIZAR CONSULTA</button>
-        <button onclick="window.location.href='expediente-clinico-panel-doctor.html'">VISUALIZAR EXPEDIENTE</button>
+        <button onclick="window.location.href='expediente-clinico.html'">VISUALIZAR EXPEDIENTE</button>
         </div>
     `;
   resultado.appendChild(tarjeta);
