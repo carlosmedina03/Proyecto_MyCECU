@@ -1,41 +1,52 @@
 <?php
-include 'conexion.php';
+require_once 'conexion.php';
 
-$nombre = $_POST['nombre'];
-$paterno = $_POST['paterno'];
-$materno = $_POST['materno'];
-$nacimiento = $_POST['nacimiento'];
-$curp = $_POST['curp'];
-$telefono = $_POST['telefono'];
-$correo = $_POST['correo'];
-$contrasena = $_POST['contrasena'];
-$domicilio = $_POST['domicilio'];
-$estado = $_POST['estado'];
-$ciudad = $_POST['ciudad'];
-$nivestudios = $_POST['nivestudios'];
-$institucion = $_POST['institucion'];
-$especialidad = $_POST['especialidad'];
-$cedula = $_POST['cedula'];
+/*--------------------------
+  1. Validar método y datos
+--------------------------*/
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Método no permitido');
+}
 
+/* Evita notices si algún campo viene vacío */
+$campos  = ['nombre','paterno','materno','nacimiento','curp','telefono',
+            'correo','contrasena','domicilio','estado','ciudad',
+            'nivestudios','institucion','especialidad','cedula'];
+
+foreach ($campos as $c) {
+    $$c = $_POST[$c] ?? null;              // variables variables
+}
+
+/*--------------------------
+  2. Hash de la contraseña
+--------------------------*/
 $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
-// Preparamos la consulta con todos los campos
+/*--------------------------
+  3. Insert preparado
+--------------------------*/
 $sql = "INSERT INTO usuarios (
-    nombre, paterno, materno, nacimiento, curp, telefono, correo, contraseña,
-    domicilio, estado, ciudad, nivestudios, institucion, especialidad, cedula
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            nombre, paterno, materno, nacimiento, curp, telefono, correo,
+            contraseña, domicilio, estado, ciudad, nivestudios, institucion,
+            especialidad, cedula
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 $stmt = $conexion->prepare($sql);
 
-// Ejecutamos la consulta con los datos
-$exito = $stmt->execute([
-    $nombre, $paterno, $materno, $nacimiento, $curp, $telefono, $correo, $contrasena_hash,
-    $domicilio, $estado, $ciudad, $nivestudios, $institucion, $especialidad, $cedula
-]);
-
-if ($exito) {
-    echo "Registro exitoso";
-} else {
-    echo "Error al registrar usuario";
+try {
+    $stmt->execute([
+        $nombre, $paterno, $materno, $nacimiento, $curp, $telefono, $correo,
+        $contrasena_hash, $domicilio, $estado, $ciudad, $nivestudios,
+        $institucion, $especialidad, $cedula
+    ]);
+    echo "✅ Registro exitoso";
+} catch (PDOException $e) {
+    // Si la columna correo o curp es UNIQUE, avisa al usuario
+    if ($e->errorInfo[1] == 1062) {  // código MySQL para duplicado
+        echo "⚠️ El correo o la CURP ya están registrados";
+    } else {
+        echo "❌ Error al registrar: " . $e->getMessage();
+    }
 }
 ?>
