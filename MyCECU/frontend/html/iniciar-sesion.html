@@ -8,20 +8,36 @@
     <link rel="stylesheet" href="../css/estilos-inicio-de-sesion.css" type="text/css">
 </head>
 <body>
+    <header>
+        <nav class="navegacion">
+            <div class="logo">
+                <img src="../assets/logo-mycecu.svg">
+            </div>
+            <ul class="menu">
+                <li><a href="../html/index.html">INICIO</a></li>
+                <li><a href="../html/buscador-pacientes.html">BUSCADOR DE PACIENTES</a></li>
+                <li><a href="../html/expediente-clinico.html">EXPEDIENTE CLÍNICO</a></li>
+            </ul>
+            <div class="acciones">
+                <a href="iniciar-sesion.html">INICIAR SESIÓN</a>
+                <a href="registro-doctor.html" class="btn-registro">REGISTRARSE</a>
+            </div>
+        </nav>
+    </header>
     <div class="caja-logo">
         <img src="../assets/logo-mycecu.svg" alt="Logotipo MyCecu">
     </div>
     <div class="caja-login">
         <h1>Inicio de sesión</h1>
         <form id="form-inicio-sesion" name="form-inicio-sesion">
-            <input type="email" id="login-correo" name="correo" placeholder="Correo electrónico" required>
-            <input type="password" id="login-contrasena" name="contrasena" placeholder="Contraseña" required>
+            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
             <button type="submit" id="btn-iniciar-sesion" name="btn-iniciar-sesion">INICIAR SESIÓN</button>
         </form>
     </div>
     <div class="caja-registro">
         <p>¿No tienes una cuenta? <a href="registro-doctor.html" id="link-registrate" name="link-registrate">Registrate aquí</a></p>
     </div>
-    <script src="../js/smoothScroll.js"></script>
+    <script src="../js/menuNavegacion.js"></script>
 </body>
 </html>
