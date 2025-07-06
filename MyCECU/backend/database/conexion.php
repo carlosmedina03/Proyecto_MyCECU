@@ -1,25 +1,14 @@
 <?php
-/*---------------------------------------------------------
-  CONEXIÓN PDO — cambia los valores por los de tu servidor
----------------------------------------------------------*/
+// conexión PDO segura
 $host = 'localhost';
-$db   = 'tu_base';
-$user = 'tu_usuario';
-$pass = 'tu_contraseña';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // lanza excepciones
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // devuelve arreglos asociativos
-    PDO::ATTR_EMULATE_PREPARES   => false,                  // usa preparadas nativas
-];
+$dbname = 'mycecu';
+$user = 'root'; // o el usuario que tengas
+$pass = '';     // contraseña
 
 try {
-    $conexion = new PDO($dsn, $user, $pass, $options);
+    $conexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    // En producción NO muestres esto tal cual
-    exit("Error de conexión: " . $e->getMessage());
+    die("❌ Error de conexión: " . $e->getMessage());
 }
 ?>
